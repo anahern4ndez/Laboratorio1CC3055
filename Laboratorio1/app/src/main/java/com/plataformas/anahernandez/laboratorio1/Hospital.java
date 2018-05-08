@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /** Ana Lucia Hernandez 17138
+ * Esteban Cabrera 17781
  * 08/05/2017
  * Laboratorio 1: Plataformas Moviles y Juegos
  *
