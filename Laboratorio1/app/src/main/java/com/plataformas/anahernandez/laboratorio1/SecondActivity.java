@@ -1,34 +1,30 @@
 package com.plataformas.anahernandez.laboratorio1;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.os.Bundle;
+import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        Bundle receiver = getIntent().getExtras();
+        Hospital hospital = receiver.getParcelable("Hospital");
 
+        TextView txt = findViewById(R.id.texto);
+        Doctor doc1 = hospital.getDoc1();
+        Doctor doc2 = hospital.getDoc2();
+        Enfermera enf1 = hospital.getEnf1();
+        Enfermera enf2 = hospital.getEnf2();
+        String name = hospital.getNombreHospital();
+        String doc1txt = doc1.toString();
+        String doc2txt = doc2.toString();
+        String enf1txt = enf1.toString();
+        String enf2txt = enf2.toString();
+        String texto = "\nNombre del Hospital: " + name +"\n\nDoctor 1: "+ doc1txt + "\n"+ "\nDoctor 2: "+ doc2txt + "\n"+ "\nEnfermera 1: "+ enf1txt + "\n" + "\nEnfermera 2: "+ enf2txt;
+        txt.setText(texto);
     }
-
 }

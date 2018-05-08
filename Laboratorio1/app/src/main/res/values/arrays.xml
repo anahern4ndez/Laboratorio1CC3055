@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="hospital1">
+        <item>Visualizar informacion del hospital en Activity B</item>
+    </string-array>
+</resources>
