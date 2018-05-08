@@ -17,20 +17,16 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+        /* recibe el objeto que mandó la otra actividad, y le hace unbundle para leerlo */
+
         Bundle receiver = getIntent().getExtras();
         Hospital hospital = receiver.getParcelable("Hospital");
 
         TextView txt = findViewById(R.id.texto);
+
+        // carga de objetos anidados
         Doctor doc1 = hospital.getDoc1();
-        if(doc1 == null){
-            doc1 = new Doctor();
-            System.out.println("doc1 is null");
-        }
         Doctor doc2 = hospital.getDoc2();
-        if(doc2 == null){
-            doc2 = new Doctor();
-            System.out.println("doc2 is null");
-        }
         Enfermera enf1 = hospital.getEnf1();
         Enfermera enf2 = hospital.getEnf2();
         String name = hospital.getNombreHospital();
@@ -38,6 +34,7 @@ public class SecondActivity extends AppCompatActivity {
         String doc2txt = doc2.toString();
         String enf1txt = enf1.toString();
         String enf2txt = enf2.toString();
+        //para poner la información del objeto en el textview
         String texto = "\nNombre del Hospital: " + name +"\n\nDoctor 1: "+ doc1txt + "\n"+ "\nDoctor 2: "+ doc2txt + "\n"+ "\nEnfermera 1: "+ enf1txt + "\n" + "\nEnfermera 2: "+ enf2txt;
         txt.setText(texto);
     }

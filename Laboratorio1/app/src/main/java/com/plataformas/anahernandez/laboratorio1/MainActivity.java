@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     Hospital hospital1;
     Hospital hospital2;
+    Hospital hospital3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         List<Hospital> hospitales = new ArrayList<>();
 
 
+        //creación de objetos anidados para cada hospital
         Doctor doc11 =  new Doctor("Luis Perez", "Pediatria", "7438291", 8439117);
         Doctor doc12 =  new Doctor("Carlos Martinez", "Cardiologia", "3859", 8543995);
         Enfermera enf11 = new Enfermera("Ada Lovelace", 843921, "Trauma");
@@ -49,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
 
         hospital2 = new Hospital("Hospital Herrera Llerandi", doc21, doc22, enf21, enf22);
         hospitales.add(hospital2);
+
+        Doctor doc31 =  new Doctor("George Clooney", "Cardiologia", "432672", 85713);
+        Doctor doc32 =  new Doctor("Pablo Escobar", "Neurologia", "5267234", 265917);
+        Enfermera enf31 = new Enfermera("Eva Mendez", 843921, "Maternidad");
+        Enfermera enf32 = new Enfermera("Gloria Trevi", 5483290, "Intensivo");
+
+        hospital3 = new Hospital("Hospital El Pilar", doc31, doc32, enf31, enf32);
+        hospitales.add(hospital3);
 
             /* Para enviar a la segunda actividad cuando se presiona un objeto del listview */
         ArrayAdapter<Hospital> adapter = new ArrayAdapter<Hospital>(this,android.R.layout.simple_list_item_1,hospitales);
@@ -67,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
-        /* Para enviar a la segunda actividad cuando se presiona el floating action button */
+        /* Para enviar un objeto hospital cualquiera a la segunda actividad cuando se presiona el floating action button */
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
