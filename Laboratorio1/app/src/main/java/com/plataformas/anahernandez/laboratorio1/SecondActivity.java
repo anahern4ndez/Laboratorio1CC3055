@@ -8,6 +8,7 @@ import android.widget.TextView;
  * Esteban Cabrera 17781
  * Fernando Hengstenberg 17699
  * Raul Monzon 17014
+ *Kevin Macario 17369
  * 08/05/2017
  * Laboratorio 1: Plataformas Moviles y Juegos
  *
