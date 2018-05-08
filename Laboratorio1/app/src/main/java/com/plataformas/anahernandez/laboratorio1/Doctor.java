@@ -3,8 +3,10 @@ package com.plataformas.anahernandez.laboratorio1;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by anahernandez on 5/7/18.
+/** Ana Lucia Hernandez 17138
+ * 08/05/2017
+ * Laboratorio 1: Plataformas Moviles y Juegos
+ *
  */
 
 public class Doctor implements Parcelable {
@@ -23,7 +25,7 @@ public class Doctor implements Parcelable {
                 "Nombre: " + nombre +
                 ", Se especializo en: " + especializacion +
                 ", Numero de Colegiado: " + numColegiado +
-                ", Sueldo: " + sueldo;
+                ", Sueldo: Q" + sueldo;
     }
 
     public Doctor(String nombre, String especializacion, String numColegiado, double sueldo) {
@@ -69,7 +71,7 @@ public class Doctor implements Parcelable {
         nombre = in.readString();
         especializacion = in.readString();
         numColegiado = in.readString();
-        sueldo = in.readLong();
+        sueldo = in.readDouble();
     }
 
     public static final Creator<Doctor> CREATOR = new Creator<Doctor>() {

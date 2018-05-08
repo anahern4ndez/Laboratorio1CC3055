@@ -3,8 +3,10 @@ package com.plataformas.anahernandez.laboratorio1;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by anahernandez on 5/7/18.
+/** Ana Lucia Hernandez 17138
+ * 08/05/2017
+ * Laboratorio 1: Plataformas Moviles y Juegos
+ *
  */
 
 public class Hospital implements Parcelable {
@@ -67,7 +69,12 @@ public class Hospital implements Parcelable {
     }
 
     protected Hospital(Parcel in) {
+        doc2 = in.readParcelable(Doctor.class.getClassLoader());
         doc1 = in.readParcelable(Doctor.class.getClassLoader());
+        enf1 = in.readParcelable(Enfermera.class.getClassLoader());
+        enf2 = in.readParcelable(Enfermera.class.getClassLoader());
+        nombreHospital = in.readString();
+
     }
 
     public static final Creator<Hospital> CREATOR = new Creator<Hospital>() {
@@ -89,7 +96,11 @@ public class Hospital implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeParcelable(doc2, flags);
         dest.writeParcelable(doc1, flags);
+        dest.writeParcelable(enf1, flags);
+        dest.writeParcelable(enf2, flags);
+        dest.writeString(nombreHospital);
     }
 
     @Override

@@ -3,8 +3,10 @@ package com.plataformas.anahernandez.laboratorio1;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by anahernandez on 5/7/18.
+/** Ana Lucia Hernandez 17138
+ * 08/05/2017
+ * Laboratorio 1: Plataformas Moviles y Juegos
+ *
  */
 
 public class Enfermera implements Parcelable {
@@ -13,12 +15,15 @@ public class Enfermera implements Parcelable {
     private String areaServicio;
 
     protected Enfermera(Parcel in) {
+        nombre = in.readString();
+        areaServicio = in.readString();
+        sueldo = in.readDouble();
     }
 
     @Override
     public String toString() {
         return "Nombre: " + nombre +
-                ", Sueldo: " + sueldo +
+                ", Sueldo: Q" + sueldo +
                 ", Area de Servicio: " + areaServicio;
     }
 
@@ -71,5 +76,9 @@ public class Enfermera implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(nombre);
+        dest.writeString(areaServicio);
+        dest.writeDouble(sueldo);
+
     }
 }
